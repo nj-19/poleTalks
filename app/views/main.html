@@ -1,0 +1,77 @@
+<md-content class="md-padding">
+  <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links"> 
+    <md-nav-item md-nav-click="goto('page1')" name="page1">
+      Sparks
+    </md-nav-item>
+    <md-nav-item md-nav-click="goto('page2')" name="page2">
+      Users
+    </md-nav-item>
+    <md-nav-item md-nav-click="goto('page3')" name="page3">
+      Notifications
+    </md-nav-item>
+    <md-nav-item md-nav-click="goto('page4')" name="page4">
+      Scheduling
+    </md-nav-item>
+    <md-nav-item md-nav-click="goto('page5')" name="page5">
+      Partners
+    </md-nav-item>
+    <md-nav-item md-nav-click="goto('page6')" name="page6">
+      Events
+    </md-nav-item>
+    <md-nav-item md-nav-click="goto('page7')" name="page7">
+      Admin
+    </md-nav-item>
+  </md-nav-bar>
+    
+  <div class="col-md-12" style="margin-top:20px">
+    <div class="col-md-6" >  
+      <md-card>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{data.store.name}}</span>
+            <span class="md-subhead"><h4>{{data.store.store_type}}</h4></span>
+            <span class="md-subhead"><h4>{{data.store.formatted_address}}</h4></span>
+            <span class="md-subhead"><h4>{{data.store.description}}</h4></span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-lg card-media"><img src="../images/pole.jpg"></div>            
+          </md-card-title-media>
+        </md-card-title>
+      </md-card> 
+    </div>
+    <div class="col-md-6"> 
+      <md-card>
+        <div id="map"></div>
+      </md-card>
+    </div>
+  </div>
+
+  <div class="col-md-12 zero-padding" style="margin-top:20px ">
+    <div class="col-md-12 zero-padding campaign-heading">
+      <div class="col-md-12 zero-padding">     
+        <div class="col-md-3 zero-padding center campaign-heading-padding md-subhead">ADMIN</div>
+        <div class="col-md-3 zero-padding center campaign-heading-padding md-subhead">TYPE</div>
+        <div class="col-md-2 zero-padding center campaign-heading-padding md-subhead">NAME</div>
+        <div class="col-md-3 zero-padding center campaign-heading-padding md-subhead">SHOT NAME</div>
+        <div class="col-md-1 zero-padding center campaign-heading-padding md-subhead">ACTIONS</div>
+      </div>
+    </div>
+  </div> 
+  <div class="col-md-12"> 
+    <md-card>
+      <md-card-title-text class="col-md-12 zero-padding" ng-repeat="store in stores" style="margin-top:10px">
+        <div layout="row">
+           <span class="col-md-3 left zero-padding">{{store.login_id}}</span>
+           <span class="col-md-3 left zero-padding">{{store.type}}</span>
+           <span class="col-md-2 left zero-padding">{{store.name}}</span>
+           <span class="col-md-3 left zero-padding">{{store.short_name}}</span>
+           <span class="col-md-1 left zero-padding">
+            <i class="material-icons">delete_forever</i>
+           </span>
+        </div>
+      </md-card-title-text>
+    </md-card>
+  </div>
+</md-content>
+  
+    
